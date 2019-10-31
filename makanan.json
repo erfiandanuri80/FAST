@@ -1,0 +1,17 @@
+{
+    "Makanan": [
+        {
+            "Nama": "Nasi Pecel",
+            "Kalori": 1000,
+            "Lemak": 30,
+            "Karbo": 20,
+            "Tambahan": [
+                 { "Nama": "Ayam", "Kalori": 260, "Lemak": 13, "Karbo": 11 },
+                 { "Nama": "Telur", "Kalori": 250 , "Lemak": 20, "Karbo": 10 }
+            ]
+        }
+    ],
+    "Camilan": [],
+    "Buah": [],
+    "Minuman": []
+}
