@@ -131,7 +131,7 @@ section {
 /* calculation SECTION
 -------------------------------------------------- */
 .calculation-sec{
-	background: url('../img/para-01.jpg') center no-repeat;
+	background: url('../img/calc.jpg') top no-repeat; 
 }
 .calculation-sec .heading {
 	float: left;
@@ -179,7 +179,9 @@ section {
 	background-color:#00b894 ;
 	border: 3px solid black;
 }
-.calculation1-sec{ 
+
+.calculation1-sec{
+	background: url('../img/calc1.jpg') top no-repeat; 
 	background-size: cover;
 	color: #000;
 	position: relative;
@@ -537,6 +539,8 @@ footer {
 	margin-bottom: 18px;
 }
 .team-sec .team-box{
+	margin-top: 50px;
+	margin-bottom: 50px;
 	margin-left: 30px;
 	text-align: center;
 }
