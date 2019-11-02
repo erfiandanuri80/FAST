@@ -13,5 +13,28 @@
     ],
     "Camilan": [],
     "Buah": [],
-    "Minuman": []
+    "Minuman": [
+        {
+            "Nama": "Teh",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0
+        }
+        {
+            "Nama": "Kopi",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+        }
+        {
+            "Nama": "Teh",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+        }
+
+
+    ]
 }
+
+
