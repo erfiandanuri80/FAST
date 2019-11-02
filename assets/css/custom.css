@@ -131,7 +131,7 @@ section {
 /* calculation SECTION
 -------------------------------------------------- */
 .calculation-sec{
-	background: url('../img/calc1.jpg') top no-repeat; 
+	background: url('../img/calc1.jpg') left no-repeat;
 }
 .calculation-sec .heading {
 	float: left;
@@ -175,7 +175,7 @@ section {
 	border: 10px double black;
 }
 
-	
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -496,7 +496,7 @@ footer {
 	font-weight: 600;
 	color: #0297FF;
 	font-size: 30px;
-	
+
 }
 .team-sec h3 {
 	display: block;
@@ -504,7 +504,7 @@ footer {
 	font-weight: 600;
 	color: #0297FF;
 	font-size: 26px;
-	
+
 }
 .team-sec h2 small {
 	margin-top: 10px;
