@@ -255,9 +255,7 @@
     </div>
   </section>
 
-  <!-- CALCULATION SECTION (BMR-CALC)
-    ================================================== -->
-  <section class="calculation-sec" id="calculation">
+  <section class="calculation-sec" id="bmr-calc">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -266,7 +264,7 @@
           </div>
         </div>
         <div class="col-md-5">
-          <div class="bmr-calc" id="bmr-calc" style="height:100%">
+          <div class="bmr-calc" style="height:100%">
             <div class="form-group row">
               <label for="staticEmail" class="col-sm-4 col-form-label">Jenis Kelamin</label>
               <div class="col-sm-8">
@@ -316,31 +314,7 @@
 
             <h2 class="text-center text-white">{{ hitung() }} kkal </h2>
           </div>
-          <script>
-            new Vue({
-              el: "#bmr-calc",
-              data: {
-                gender: "L",
-                berat: 0,
-                tinggi: 0,
-                umur: 0,
-                fisik: 0,
-                fisikTeks: [
-                  "Sangat jarang berolahraga, sehari-hari bekerja dibelakang meja",
-                  "Jarang berolahraga , 1-3 hari dalam seminggu",
-                  "Cukup sering berolahraga, 3-5 hari dalam seminggu",
-                  "Sering berolahraga, 6-7 hari dalam seminggu",
-                  "Sangat sering / seharian berolahraga , sehari-hari bekerja fisik",
-                ],
-                hitung: function () {
-                  return (10 * this.berat + 6.25 * this.tinggi - 5 * this.umur + this.fisik)
-                }
-              },
-              methods: {
 
-              }
-            })
-          </script>
         </div>
 
 
@@ -366,19 +340,61 @@
 
         <!-- CALCULATION SECTION (KALORI PER DAY CALCULATOR)
     ================================================== -->
+      </div>
+  </section>
+
+  <script>
+    new Vue({
+      el: "#bmr-calc",
+      data: {
+        gender: "L",
+        berat: 30,
+        tinggi: 120,
+        umur: 20,
+        fisik: 1,
+        fisikTeks: [
+          "Sangat jarang berolahraga, sehari-hari bekerja dibelakang meja",
+          "Jarang berolahraga , 1-3 hari dalam seminggu",
+          "Cukup sering berolahraga, 3-5 hari dalam seminggu",
+          "Sering berolahraga, 6-7 hari dalam seminggu",
+          "Sangat sering / seharian berolahraga , sehari-hari bekerja fisik",
+        ],
+        hitung: function () {
+          return (10 * this.berat + 6.25 * this.tinggi - 5 * this.umur + (this.gender == "L" ? 5 : -161) + 100 *
+            this.fisik)
+        }
+      },
+      methods: {
+
+      }
+    })
+  </script>
+
+  <section class="calculation-sec" id="daily-calc">
+    <div class="container">
+      <div class="row">
         <div class="col-md-12">
           <div class="heading text-md-center m-5">
             <h2>Apakah Kebutuhan Kalori mu Hari ini Tercukupi ?</h2>
           </div>
         </div>
-        <div class="col-md-4" style="background-color: #00b894; padding: 30px;border: 10px double black;">
-          <div id="daily-calc" class="row">
-            <div class="col-md-12 my-2" v-for="bag in bagian">
+        <div class="col-md-5" style="background-color: #00b894; padding: 30px;border: 10px double black;">
+          <div class="row">
+            <div class="col-md-12 my-2" v-for="(bag, bi) in bagian">
               <div class="card">
                 <div class="card-body">
                   <div class="card-title d-flex">
-                    <span>{{bag}}</span>
-                    <button class="ml-auto btn btn-primary" data-toggle="modal" data-target="#exampleModal">+</button>
+                    <span>{{bag.judul}}</span>
+                    <button class="ml-auto btn btn-primary" @click="input.bagian = bi" data-toggle="modal"
+                      data-target="#exampleModal">+</button>
+                  </div>
+                  <div class="list-group">
+                    <div class="list-group-item" v-for="bit in bagian[bi].menu">
+                      {{ bit.Nama }}
+                      <span v-for="bita in bit.Tambahan" class="text-muted">
+                        + {{ bita.Nama }}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -390,48 +406,49 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Menu</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    ...
+                    <div class="btn-group" v-if="input.kelompok == null">
+                      <button class="btn btn-success" v-for="(v,k) in makanan"
+                        @click="input.kelompok = k">{{k}}</button>
+                    </div>
+                    <div class="btn-group" v-else-if="input.item == -1">
+                      <button class="btn btn-success" v-for="(m, mi) in makanan[input.kelompok]"
+                        @click="input.item = mi">{{m.Nama}}</button>
+                    </div>
+                    <div v-else>
+                      <div class="btn-group" v-for="item in [makanan[input.kelompok][input.item]]">
+                        <button class="btn btn-success" v-for="(t, ti) in item.Tambahan"
+                          :class="{active: !!input.toppings[ti]}" @click="setTopping(ti)">{{t.Nama}}</button>
+                      </div>
+                    </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-primary">Tambahkan</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                      @click="pushMenu()">Tambahkan</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <script>
-            new Vue({
-              el: "#daily-calc",
-              data: {
-                bagian: ["Pagi", "Siang", "Malam"]
-              },
-              methods: {
-
-              }
-            })
-          </script>
         </div>
-
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-plus" aria-hidden="true"></i>
               <h3><b>Ringkasan</b></h3>
               <p>Sisa Kalori = 0 kkal<br>
-                Konsumsi Kalori = 0 kkal<br>
+                Konsumsi Kalori total = {{ total.Kalori }}<br>
                 0% dari AKG = 2500 kkal<br>
                 <hr>
               </p>
             </div>
             <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-leaf" aria-hidden="true"></i>
               <h3><b>Karbohidrat</b></h3>
-              <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a
-                globe, having the qualities of a globe.</p>
+              <p>Karbohidrat total = {{ total.Karbo }}</p>
             </div>
             <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-leaf" aria-hidden="true"></i>
               <h3><b>Protein</b></h3>
@@ -440,18 +457,64 @@
             </div>
             <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-bell" aria-hidden="true"></i>
               <h3><b>Lemak</b></h3>
-              <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a
-                globe, having the qualities of a globe.</p>
+              <p>Lemak total = {{ total.Lemak }}</p>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
   </section>
 
   <!-- CONCLUSION SECTION 
-    ================================================== -->
+    ==========  ======================================== -->
+  <script>
+    let daily = new Vue({
+      el: "#daily-calc",
+      data: {
+        bagian: ["Pagi", "Siang", "Malam"].map((x) => {
+          return {
+            judul: x,
+            menu: [],
+          }
+        }),
+        total: {
+          "Kalori": 0,
+          "Lemak": 0,
+          "Karbo": 0,
+        },
+        makanan: {},
+        input: {
+          bagian: 0,
+          kelompok: null,
+          item: -1,
+          toppings: {},
+        }
+      },
+      methods: {
+        setTopping: function (i) {
+          this.$set(this.input.toppings, i, !this.input.toppings[i]);
+        },
+        pushMenu: function () {
+          let mkn = JSON.parse(JSON.stringify(this.makanan[this.input.kelompok][this.input.item]));
+          mkn.Tambahan = mkn.Tambahan.filter((v, i) => !!this.input.toppings[i]);
+          ["Kalori", "Lemak", "Karbo"].forEach(el => {
+            this.total[el] += mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0)
+          })
+          this.bagian[this.input.bagian].menu.push(mkn);
+          this.input = {
+            bagian: 0,
+            kelompok: null,
+            item: -1,
+            toppings: {},
+          };
+        }
+      }
+    })
+
+    fetch("https://erfiandanuri80.github.io/FAST/makanan.json")
+      .then((res) => res.json())
+      .then((res) => daily.makanan = res);
+  </script>
+
   <section class="conclusion-sec parallax-section" id="conclusion">
     <div class="container">
       <div class="row">
