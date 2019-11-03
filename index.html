@@ -39,7 +39,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse1">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link page-scroll" href="#myCarousel">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#myCarousel">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#introduction">Introduction</a>
@@ -394,10 +394,15 @@
                       <span v-for="bita in bit.Tambahan" class="text-muted">
                         + {{ bita.Nama }}
                       </span>
+
                     </div>
                   </div>
                 </div>
+                
               </div>
+            </div>
+            <div class="col-md-12 mt-3">
+            <h2 class="text-center text-light">{{ total.Kalori }} kkal </h2>
             </div>
 
             <!-- Modal -->
