@@ -11,30 +11,212 @@
             ]
         }
     ],
-    "Camilan": [],
-    "Buah": [],
+    "Camilan": [
+        {
+            "Nama": "Pentol",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0,
+        },
+        {
+            "Nama": "Sempol",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Telur gulung",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Cilok",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Gorengan",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Sewel",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Teh",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        }
+    ],
+    "Buah": [
+        {
+            "Nama": "Apel",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Jeruk",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Pisang",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Anggur",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Nanas",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Melon",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Nangka",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Pepaya",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Salak",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Mangga",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Jambu",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Blewah",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Belimbing",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        }
+
+    ],
     "Minuman": [
         {
             "Nama": "Teh",
             "Kalori": 0,
             "Lemak": 0,
-            "Karbo": 0
+            "Karbo": 0,
+            "Protein":0
         },
         {
             "Nama": "Kopi",
             "Kalori": 0,
             "Lemak": 0,
-            "Karbo": 0
+            "Karbo": 0,
+            "Protein":0
         },
         {
-            "Nama": "Teh",
+            "Nama": "jus",
             "Kalori": 0,
             "Lemak": 0,
-            "Karbo": 0
-        }
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Es sirup",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Es degan",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Es Oyen",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Es Campur",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0
+        },
+        {
+            "Nama": "Es Dawet",
+            "Kalori": 0,
+            "Lemak": 0,
+            "Karbo": 0,
+            "Protein":0,
+        },
 
 
     ]
 }
 
 
+x
