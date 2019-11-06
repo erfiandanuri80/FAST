@@ -48,7 +48,7 @@
             <a class="nav-link" href="#gallery">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#calculation">Calculation</a>
+            <a class="nav-link" href="#bmr-calc">Calculation</a>
           </li>
 
           <li class="nav-item">
@@ -74,8 +74,8 @@
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
     <!-- Add Navigation -->
-    <div class="swiper-button-prev"> </div>
-    <div class="swiper-button-next"> </div>
+    <div class="swiper-button-prev"><-</div>
+    <div class="swiper-button-next">-></div>
   </div>
 
   <!-- INTRODUCTION SECTION
@@ -282,7 +282,7 @@
                 <div class="input-group">
                   <input type="number" min="10" max="199" v-model.number="berat" class="form-control">
                   <div class="input-group-append">
-                    <div class="input-group-text">kg</div>
+                    <div class="input-group-text1">kg</div>
                   </div>
                 </div>
               </div>
@@ -293,7 +293,7 @@
                 <div class="input-group">
                   <input type="number" min="50" max="250" v-model.number="tinggi" class="form-control">
                   <div class="input-group-append">
-                    <div class="input-group-text">cm</div>
+                    <div class="input-group-text1">cm</div>
                   </div>
                 </div>
               </div>
@@ -402,7 +402,7 @@
               </div>
             </div>
             <div class="col-md-12 mt-3">
-            <h2 class="text-center text-light">{{ total.Kalori }} kkal </h2>
+            <h2 class="text-center text-white">{{ total.Kalori }} kkal </h2>
             </div>
 
             <!-- Modal -->
