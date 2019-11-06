@@ -386,7 +386,7 @@
                   <div class="card-title d-flex">
                     <span>{{bag.judul}}</span>
                     <button class="ml-auto btn btn-primary" @click="input.bagian = bi" data-toggle="modal"
-                      data-target="#exampleModal">+</button>
+                      data-target="#addFoodModal">+</button>
                   </div>
                   <div class="list-group">
                     <div class="list-group-item" v-for="bit in bagian[bi].menu">
@@ -406,11 +406,11 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Menu</h5>
+                    <h5 class="modal-title" id="addFoodModalLabel">Menu</h5>
                     <button type="button" class="close" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -422,7 +422,7 @@
                     </div>
                     <div class="btn-group" v-else-if="input.item == -1">
                       <button class="btn btn-success" v-for="(m, mi) in makanan[input.kelompok]"
-                        @click="input.item = mi">{{m.Nama}}</button>
+                        @click="input.item = mi;if (!m.Tambahan) pushMenu()">{{m.Nama}}</button>
                     </div>
                     <div v-else>
                       <div class="btn-group" v-for="item in [makanan[input.kelompok][input.item]]">
@@ -500,11 +500,20 @@
           this.$set(this.input.toppings, i, !this.input.toppings[i]);
         },
         pushMenu: function () {
-          let mkn = JSON.parse(JSON.stringify(this.makanan[this.input.kelompok][this.input.item]));
-          mkn.Tambahan = mkn.Tambahan.filter((v, i) => !!this.input.toppings[i]);
-          ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
-            this.total[el] += mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0)
-          })
+
+          let ss = JSON.stringify(this.makanan[this.input.kelompok][this.input.item]);
+          // console.log(ss);
+          let mkn = JSON.parse(ss);
+          if (mkn.Tambahan) {
+              mkn.Tambahan = mkn.Tambahan.filter((v, i) => !!this.input.toppings[i]);
+            ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
+              this.total[el] += mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0)
+            })
+          } else {
+            ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
+              this.total[el] += mkn[el]
+            })
+          }
           this.bagian[this.input.bagian].menu.push(mkn);
           this.input = {
             bagian: 0,
@@ -512,6 +521,7 @@
             item: -1,
             toppings: {},
           };
+          $('#addFoodModal').modal('hide')
         }
       }
     })
