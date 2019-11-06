@@ -398,7 +398,7 @@
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div>
             <div class="col-md-12 mt-3">
@@ -458,8 +458,7 @@
             </div>
             <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-leaf" aria-hidden="true"></i>
               <h3><b>Protein</b></h3>
-              <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a
-                globe, having the qualities of a globe.</p>
+              <p>Protein total = {{ total.Protein }}</p>
             </div>
             <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-bell" aria-hidden="true"></i>
               <h3><b>Lemak</b></h3>
@@ -470,7 +469,7 @@
       </div>
   </section>
 
-  <!-- CONCLUSION SECTION 
+  <!-- CONCLUSION SECTION
     ==========  ======================================== -->
   <script>
     let daily = new Vue({
@@ -486,6 +485,7 @@
           "Kalori": 0,
           "Lemak": 0,
           "Karbo": 0,
+          "Protein": 0,
         },
         makanan: {},
         input: {
@@ -502,7 +502,7 @@
         pushMenu: function () {
           let mkn = JSON.parse(JSON.stringify(this.makanan[this.input.kelompok][this.input.item]));
           mkn.Tambahan = mkn.Tambahan.filter((v, i) => !!this.input.toppings[i]);
-          ["Kalori", "Lemak", "Karbo"].forEach(el => {
+          ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
             this.total[el] += mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0)
           })
           this.bagian[this.input.bagian].menu.push(mkn);

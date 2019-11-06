@@ -16,49 +16,49 @@
             "Kalori": 333,
             "Lemak": 12.34,
             "Karbo": 41.7,
-            "Protein":12.47,
+            "Protein":12.47
         },
         {
             "Nama": "Soto Ayam",
             "Kalori": 312,
             "Lemak": 14.92,
             "Karbo": 19.5,
-            "Protein": 24.01,
+            "Protein": 24.01
         },
         {
             "Nama": "Nasi Rawon",
             "Kalori": 325,
             "Lemak": 7.9,
             "Karbo": 48.08,
-            "Protein": 14.2,
+            "Protein": 14.2
         },
         {
             "Nama": "Nasi Ayam Geprek",
             "Kalori": 467,
             "Lemak": 18.45,
             "Karbo": 51.59,
-            "Protein": 21.81,
+            "Protein": 21.81
         },
         {
             "Nama": "Tahu Tek",
             "Kalori": 387,
             "Lemak": 9.38,
             "Karbo": 62.76,
-            "Protein": 16.7,
+            "Protein": 16.7
         },
         {
             "Nama": "Bakso",
             "Kalori": 444,
             "Lemak": 28.86,
             "Karbo": 1.6,
-            "Protein":42.4,
+            "Protein":42.4
         },
         {
             "Nama": "Mie Ayam",
             "Kalori": 421,
             "Lemak": 18.74,
             "Karbo": 46.23,
-            "Protein":16.7,
+            "Protein":16.7
         }
     ],
     "Camilan": [
@@ -67,7 +67,7 @@
             "Kalori": 269,
             "Lemak": 15.88,
             "Karbo": 17.23,
-            "Protein":13.74,
+            "Protein":13.74
         },
         {
             "Nama": "Sempol",
@@ -90,7 +90,7 @@
             "Karbo": 58.17,
             "Protein":2.45
         }
-        
+
     ],
     "Buah": [
         {
@@ -198,7 +198,7 @@
                 { "Nama": "Wortel", "Kalori": 94, "Lemak": 0.35, "Karbo": 21.92 , "Protein":2.24 },
                 { "Nama": "Jeruk", "Kalori": 112, "Lemak": 0.5, "Karbo": 25.79 , "Protein":1.74 },
                 { "Nama": "Nanas", "Kalori": 132, "Lemak": 0.3, "Karbo": 32.17 , "Protein":0.9 },
-                { "Nama": "Mangga", "Kalori": 122, "Lemak": 0.3, "Karbo": 30.15 , "Protein":1.2 },
+                { "Nama": "Mangga", "Kalori": 122, "Lemak": 0.3, "Karbo": 30.15 , "Protein":1.2 }
            ]
         },
         {
