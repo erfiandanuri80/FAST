@@ -65,10 +65,10 @@
   <div class="swiper-container main-slider" id="myCarousel">
     <div class="swiper-wrapper">
       <div class="swiper-slide slider-bg-position" style="background:url('assets/img/1.jpg')" data-hash="slide1">
-        <h2>It is health that is real wealth and not pieces of gold and silver</h2>
+        <h2>Cek Kecukupan Nutrisi Anda</h2>
       </div>
       <div class="swiper-slide slider-bg-position" style="background:url('assets/img/2.jpg')" data-hash="slide2">
-        <h2>Happiness is nothing more than good health and a bad memory</h2>
+        <h2></h2>
       </div>
     </div>
     <!-- Add Pagination -->
@@ -371,12 +371,12 @@
                     <button class="ml-auto btn btn-primary" @click="input.bagian = bi" data-toggle="modal" data-target="#addFoodModal">+</button>
                   </div>
                   <div class="list-group">
-                    <div class="list-group-item" v-for="bit in bagian[bi].menu">
+                    <div class="list-group-item d-flex align-items-center" v-for="bit, biti in bagian[bi].menu" :key="bit.Nama">
                       {{ bit.Nama }}
                       <span v-for="bita in bit.Tambahan" class="text-muted">
                         + {{ bita.Nama }}
                       </span>
-
+                      <button @click="bagian[bi].menu.splice(biti, 1)" class="btn btn-danger ml-auto">&minus;</button>
                     </div>
                   </div>
                 </div>
@@ -393,22 +393,32 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="addFoodModalLabel">Menu</h5>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="ml-auto close" @click="backMenu()">
+                        <span aria-hidden="true">&leftarrow;</span>
+                      </button>
+                    <button type="button" class="ml-1 close" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <div class="btn-group" v-if="input.kelompok == null">
-                      <button class="btn btn-success" v-for="(v,k) in makanan"
-                        @click="input.kelompok = k">{{k}}</button>
+                    <div class="row" v-if="input.kelompok == null">
+                      <div class="col-6" v-for="(v,k) in makanan">
+                          <button class="card" @click="input.kelompok = k">
+                              <img :src="'./assets/img/'+v.img" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <h5 class="card-title">{{v.name}}</h5>
+                              </div>
+                          </button>
+                      </div>
                     </div>
-                    <div class="btn-group" v-else-if="input.item == -1">
-                      <button class="btn btn-success" v-for="(m, mi) in makanan[input.kelompok].list"
+                    <div class="list-group" v-else-if="input.item == -1">
+                      <button class="list-group-item list-group-item-action" v-for="(m, mi) in makanan[input.kelompok].list"
                         @click="input.item = mi;if (!m.Tambahan) pushMenu()">{{m.Nama}}</button>
                     </div>
                     <div v-else>
-                      <div class="btn-group" v-for="item in [makanan[input.kelompok].list[input.item]]">
-                        <button class="btn btn-success" v-for="(t, ti) in item.Tambahan"
+                      <div class="list-group" v-for="item in [makanan[input.kelompok].list[input.item]]">
+                        <h5>Tambahan&nbsp;: </h5>
+                        <button class="list-group-item list-group-item-action" v-for="(t, ti) in item.Tambahan"
                           :class="{active: !!input.toppings[ti]}" @click="setTopping(ti)">{{t.Nama}}</button>
                       </div>
                     </div>
@@ -481,9 +491,15 @@
         setTopping: function (i) {
           this.$set(this.input.toppings, i, !this.input.toppings[i]);
         },
+        backMenu: function() {
+          if (this.input.item != -1)
+            this.input.item = -1
+          else if (this.input.kelompok !== null)
+            this.input.kelompok = null
+        },
         pushMenu: function () {
 
-          let ss = JSON.stringify(this.makanan[this.input.kelompok][this.input.item]);
+          let ss = JSON.stringify(this.makanan[this.input.kelompok].list[this.input.item]);
           // console.log(ss);
           let mkn = JSON.parse(ss);
           if (mkn.Tambahan) {
@@ -552,21 +568,16 @@
         </div>
         <div class="col-md-4">
           <div class="team-box">
-            <div class="team-lbox-img wow fadeInDown delay-06s"><a href="#"></a>
-              <img src="assets/img/men.png" alt="">
-            </div>
-            <br>
-            <h3 class="wow fadeInDown delay-06s">M. Wildan Mubarok</h3>
+
+            <h3 class="wow fadeInDown delay-06s">Wildan Mubarok</h3>
+            <small class="text-muted"></small>
 
 
           </div>
         </div>
         <div class="col-md-4">
           <div class="team-box">
-            <div class="team-lbox-img wow fadeInDown delay-06s"><a href="#"></a>
-              <img src="assets/img/men.png" alt="">
-            </div>
-            <br>
+
             <h3 class="wow fadeInDown delay-06s">David Apriyanto</h3>
 
 
@@ -574,10 +585,7 @@
         </div>
         <div class="col-md-4">
           <div class="team-box">
-            <div class="team-lbox-img wow fadeInDown delay-06s"><a href="#"></a>
-              <img src="assets/img/men.png" alt="">
-            </div>
-            <br>
+
             <h3 class="wow fadeInDown delay-06s">Rio Erfian</h3>
 
 
