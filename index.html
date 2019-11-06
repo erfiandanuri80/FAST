@@ -12,7 +12,7 @@
   <title>NONE</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="assets/css/custom.css" rel="stylesheet">
 
@@ -29,13 +29,14 @@
 
 <body>
   <!-- Top Navigation -->
-  <nav class="navbar navbar-toggleable-md mb-4 top-bar navbar-static-top sps sps--abv">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-toggleable-md mb-4 top-bar navbar-static-top sps sps--abv">
+      <a class="navbar-brand" href="#">DIET<span>out</span></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><img src="./assets/img/equal.png"> </span> </button> <a class="navbar-brand"
-        href="#">DIET<span>out</span></a>
+        data-target="#navbarCollapse1">
+        <span class="navbar-toggler-icon">
+          <img src="./assets/img/equal.png">
+        </span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarCollapse1">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -56,7 +57,6 @@
           </li>
         </ul>
       </div>
-    </div>
   </nav>
 
   <!-- Swiper Silder
@@ -65,17 +65,17 @@
   <div class="swiper-container main-slider" id="myCarousel">
     <div class="swiper-wrapper">
       <div class="swiper-slide slider-bg-position" style="background:url('assets/img/1.jpg')" data-hash="slide1">
-        <h2>It is health that is real wealth and not pieces of gold and silver</h2>
+        <h2>Cek Kecukupan Nutrisi Anda</h2>
       </div>
       <div class="swiper-slide slider-bg-position" style="background:url('assets/img/2.jpg')" data-hash="slide2">
-        <h2>Happiness is nothing more than good health and a bad memory</h2>
+        <h2></h2>
       </div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
     <!-- Add Navigation -->
-    <div class="swiper-button-prev"><-</div>
-    <div class="swiper-button-next">-></div>
+    <div class="swiper-button-prev">&lt;-</div>
+    <div class="swiper-button-next">-&gt;</div>
   </div>
 
   <!-- INTRODUCTION SECTION
@@ -84,31 +84,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <h2><small>Who We Are</small>About<br>
-            Our Blog</h2>
+          <h2><small>Diet</small> Out</h2>
         </div>
         <div class="col-md-4">
-          <p>To enjoy good health, to bring true happiness to one's family, to bring peace to all, one must
-            first discipline and control one's own mind. If a man can control his mind he can find the way
-            to Enlightenment, and all wisdom and virtue will naturally come to him.</p>
-          <p>Our greatest happiness does not depend on the condition of life in which chance has placed us,
-            but is always the result of a good conscience, good health, occupation, and freedom in all just
-            pursuits.</p>s
-          <p>Saving our planet, lifting people out of poverty, advancing economic growth... these are one and
-            the same fight. We must connect the dots between climate change, water scarcity, energy
-            shortages, global health, food security and women's empowerment. Solutions to one problem must
-            be solutions for all.</p>
+          <p>Manusia mempunyai kebutuhan untuk mengisi tenaga sehari-sehari melalui makanan. Penting bagi setiap manusia
+            untuk menjaga asupan makanan secara terkontrol agar dapat menjalankan rutinitas secara optimal</p>
         </div>
         <div class="col-md-4">
-          <p>Our greatest happiness does not depend on the condition of life in which chance has placed us,
-            but is always the result of a good conscience, good health, occupation, and freedom in all just
-            pursuits.</p>
-          <p>Our greatest happiness does not depend on the condition of life in which chance has placed us,
-            but is always the result of a good conscience, good health, occupation, and freedom in all just
-            pursuits.</p>
-          <p>Being in control of your life and having realistic expectations about your day-to-day challenges
-            are the keys to stress management, which is perhaps the most important ingredient to living a
-            happy, healthy and rewarding life.</p>
+          <p></p>
           <p><a href="#" class="btn btn-capsul">Explore More</a></p>
         </div>
       </div>
@@ -225,11 +208,11 @@
             <div class="form-group row">
               <label for="staticEmail" class="col-sm-4 col-form-label">Jenis Kelamin</label>
               <div class="col-sm-8">
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-primary" :class="{ active: gender=='L'}"
-                    @click="gender = 'L'">Laki-Laki</button>
-                  <button type="button" class="btn btn-primary" :class="{ active: gender=='P'}"
-                    @click="gender = 'P'">Perempuan</button>
+                <div class="btn-group form-control h-auto" role="group">
+                  <button type="button" class="btn btn-outline-primary" :class="{ active: gender=='L'}"
+                    @click="gender = 'L'">Cowok</button>
+                  <button type="button" class="btn btn-outline-primary" :class="{ active: gender=='P'}"
+                    @click="gender = 'P'">Cewek</button>
                 </div>
               </div>
             </div>
@@ -239,7 +222,7 @@
                 <div class="input-group">
                   <input type="number" min="10" max="199" v-model.number="berat" class="form-control">
                   <div class="input-group-append">
-                    <div class="input-group-text1">kg</div>
+                    <div class="input-group-text">kg</div>
                   </div>
                 </div>
               </div>
@@ -250,7 +233,7 @@
                 <div class="input-group">
                   <input type="number" min="50" max="250" v-model.number="tinggi" class="form-control">
                   <div class="input-group-append">
-                    <div class="input-group-text1">cm</div>
+                    <div class="input-group-text">cm</div>
                   </div>
                 </div>
               </div>
@@ -264,8 +247,8 @@
             <div class="form-group row">
               <label for="staticEmail" class="col-sm-4 col-form-label">Fisik</label>
               <div class="col-sm-8">
-                <input type="range" min="0" max="4" v-model.number="fisik" class="form-control">
-                <p>{{ fisikTeks[fisik] }}</p>
+                <input type="range" min="0" max="4" v-model.number="fisik" class="form-control custom-range">
+                <textarea class="form-control mt-2" style="height:6em" readonly>{{ fisikTeks[fisik] }}</textarea>
               </div>
             </div>
 
@@ -341,17 +324,16 @@
               <div class="card">
                 <div class="card-body">
                   <div class="card-title d-flex">
-                    <span>{{bag.judul}}</span>
-                    <button class="ml-auto btn btn-primary" @click="input.bagian = bi" data-toggle="modal"
-                      data-target="#addFoodModal">+</button>
+                    <h5>{{bag.judul}}</h5>
+                    <button class="ml-auto btn btn-primary" @click="input.bagian = bi" data-toggle="modal" data-target="#addFoodModal">+</button>
                   </div>
                   <div class="list-group">
-                    <div class="list-group-item" v-for="bit in bagian[bi].menu">
+                    <div class="list-group-item d-flex align-items-center" v-for="bit, biti in bagian[bi].menu" :key="bit.Nama">
                       {{ bit.Nama }}
                       <span v-for="bita in bit.Tambahan" class="text-muted">
                         + {{ bita.Nama }}
                       </span>
-
+                      <button @click="bagian[bi].menu.splice(biti, 1)" class="btn btn-danger ml-auto">&minus;</button>
                     </div>
                   </div>
                 </div>
@@ -359,7 +341,7 @@
               </div>
             </div>
             <div class="col-md-12 mt-3">
-            <h2 class="text-center text-white">{{ total.Kalori }} kkal </h2>
+              <h2 class="text-center text-white">{{ total.Kalori }} kkal </h2>
             </div>
 
             <!-- Modal -->
@@ -368,22 +350,32 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="addFoodModalLabel">Menu</h5>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="ml-auto close" @click="backMenu()">
+                        <span aria-hidden="true">&leftarrow;</span>
+                      </button>
+                    <button type="button" class="ml-1 close" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <div class="btn-group" v-if="input.kelompok == null">
-                      <button class="btn btn-success" v-for="(v,k) in makanan"
-                        @click="input.kelompok = k">{{k}}</button>
+                    <div class="row" v-if="input.kelompok == null">
+                      <div class="col-6" v-for="(v,k) in makanan">
+                          <button class="card" @click="input.kelompok = k">
+                              <img :src="'./assets/img/'+v.img" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <h5 class="card-title">{{v.name}}</h5>
+                              </div>
+                          </button>
+                      </div>
                     </div>
-                    <div class="btn-group" v-else-if="input.item == -1">
-                      <button class="btn btn-success" v-for="(m, mi) in makanan[input.kelompok]"
+                    <div class="list-group" v-else-if="input.item == -1">
+                      <button class="list-group-item list-group-item-action" v-for="(m, mi) in makanan[input.kelompok].list"
                         @click="input.item = mi;if (!m.Tambahan) pushMenu()">{{m.Nama}}</button>
                     </div>
                     <div v-else>
-                      <div class="btn-group" v-for="item in [makanan[input.kelompok][input.item]]">
-                        <button class="btn btn-success" v-for="(t, ti) in item.Tambahan"
+                      <div class="list-group" v-for="item in [makanan[input.kelompok].list[input.item]]">
+                        <h5>Tambahan&nbsp;: </h5>
+                        <button class="list-group-item list-group-item-action" v-for="(t, ti) in item.Tambahan"
                           :class="{active: !!input.toppings[ti]}" @click="setTopping(ti)">{{t.Nama}}</button>
                       </div>
                     </div>
@@ -456,13 +448,19 @@
         setTopping: function (i) {
           this.$set(this.input.toppings, i, !this.input.toppings[i]);
         },
+        backMenu: function() {
+          if (this.input.item != -1)
+            this.input.item = -1
+          else if (this.input.kelompok !== null)
+            this.input.kelompok = null
+        },
         pushMenu: function () {
 
-          let ss = JSON.stringify(this.makanan[this.input.kelompok][this.input.item]);
+          let ss = JSON.stringify(this.makanan[this.input.kelompok].list[this.input.item]);
           // console.log(ss);
           let mkn = JSON.parse(ss);
           if (mkn.Tambahan) {
-              mkn.Tambahan = mkn.Tambahan.filter((v, i) => !!this.input.toppings[i]);
+            mkn.Tambahan = mkn.Tambahan.filter((v, i) => !!this.input.toppings[i]);
             ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
               this.total[el] += mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0)
             })
@@ -527,21 +525,16 @@
         </div>
         <div class="col-md-4">
           <div class="team-box">
-            <div class="team-lbox-img wow fadeInDown delay-06s"><a href="#"></a>
-              <img src="assets/img/men.png" alt="">
-            </div>
-            <br>
-            <h3 class="wow fadeInDown delay-06s">M. Wildan Mubarok</h3>
+
+            <h3 class="wow fadeInDown delay-06s">Wildan Mubarok</h3>
+            <small class="text-muted"></small>
 
 
           </div>
         </div>
         <div class="col-md-4">
           <div class="team-box">
-            <div class="team-lbox-img wow fadeInDown delay-06s"><a href="#"></a>
-              <img src="assets/img/men.png" alt="">
-            </div>
-            <br>
+
             <h3 class="wow fadeInDown delay-06s">David Apriyanto</h3>
 
 
@@ -549,10 +542,7 @@
         </div>
         <div class="col-md-4">
           <div class="team-box">
-            <div class="team-lbox-img wow fadeInDown delay-06s"><a href="#"></a>
-              <img src="assets/img/men.png" alt="">
-            </div>
-            <br>
+
             <h3 class="wow fadeInDown delay-06s">Rio Erfian</h3>
 
 
