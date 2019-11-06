@@ -1,235 +1,285 @@
-{
-    "Makanan": [
-        {
-            "Nama": "Nasi Pecel",
-            "Kalori": 0,
-            "Lemak": 0,
-            "Karbo": 0,
-            "Protein": 0,
-            "Tambahan": [
-                 { "Nama": "Ayam", "Kalori": 460, "Lemak": 23.68, "Karbo": 41.76, "Protein" :21.93 },
-                 { "Nama": "Telur", "Kalori": 343 , "Lemak": 16.6, "Karbo": 32.7,"Protein" :6.48 }
-            ]
-        },
-        {
-            "Nama": "Nasi Goreng",
-            "Kalori": 333,
-            "Lemak": 12.34,
-            "Karbo": 41.7,
-            "Protein":12.47
-        },
-        {
-            "Nama": "Soto Ayam",
-            "Kalori": 312,
-            "Lemak": 14.92,
-            "Karbo": 19.5,
-            "Protein": 24.01
-        },
-        {
-            "Nama": "Nasi Rawon",
-            "Kalori": 325,
-            "Lemak": 7.9,
-            "Karbo": 48.08,
-            "Protein": 14.2
-        },
-        {
-            "Nama": "Nasi Ayam Geprek",
-            "Kalori": 467,
-            "Lemak": 18.45,
-            "Karbo": 51.59,
-            "Protein": 21.81
-        },
-        {
-            "Nama": "Tahu Tek",
-            "Kalori": 387,
-            "Lemak": 9.38,
-            "Karbo": 62.76,
-            "Protein": 16.7
-        },
-        {
-            "Nama": "Bakso",
-            "Kalori": 444,
-            "Lemak": 28.86,
-            "Karbo": 1.6,
-            "Protein":42.4
-        },
-        {
-            "Nama": "Mie Ayam",
-            "Kalori": 421,
-            "Lemak": 18.74,
-            "Karbo": 46.23,
-            "Protein":16.7
-        }
-    ],
-    "Camilan": [
-        {
-            "Nama": "Pentol",
-            "Kalori": 269,
-            "Lemak": 15.88,
-            "Karbo": 17.23,
-            "Protein":13.74
-        },
-        {
-            "Nama": "Sempol",
-            "Kalori": 209,
-            "Lemak": 7.94,
-            "Karbo": 24.04,
-            "Protein":9.83
-        },
-        {
-            "Nama": "Telur gulung",
-            "Kalori": 100,
-            "Lemak": 5.8,
-            "Karbo": 9.73,
-            "Protein":2.6
-        },
-        {
-            "Nama": "Cilok",
-            "Kalori": 266,
-            "Lemak": 2.57,
-            "Karbo": 58.17,
-            "Protein":2.45
-        }
+[{
+		"name": "Makanan",
+		"img": "pic2.jpg",
+		"list": [{
+				"Nama": "Nasi Pecel",
+				"Kalori": 0,
+				"Lemak": 0,
+				"Karbo": 0,
+				"Protein": 0,
+				"Tambahan": [{
+						"Nama": "Ayam",
+						"Kalori": 460,
+						"Lemak": 23.68,
+						"Karbo": 41.76,
+						"Protein": 21.93
+					},
+					{
+						"Nama": "Telur",
+						"Kalori": 343,
+						"Lemak": 16.6,
+						"Karbo": 32.7,
+						"Protein": 6.48
+					}
+				]
+			},
+			{
+				"Nama": "Nasi Goreng",
+				"Kalori": 333,
+				"Lemak": 12.34,
+				"Karbo": 41.7,
+				"Protein": 12.47
+			},
+			{
+				"Nama": "Soto Ayam",
+				"Kalori": 312,
+				"Lemak": 14.92,
+				"Karbo": 19.5,
+				"Protein": 24.01
+			},
+			{
+				"Nama": "Nasi Rawon",
+				"Kalori": 325,
+				"Lemak": 7.9,
+				"Karbo": 48.08,
+				"Protein": 14.2
+			},
+			{
+				"Nama": "Nasi Ayam Geprek",
+				"Kalori": 467,
+				"Lemak": 18.45,
+				"Karbo": 51.59,
+				"Protein": 21.81
+			},
+			{
+				"Nama": "Tahu Tek",
+				"Kalori": 387,
+				"Lemak": 9.38,
+				"Karbo": 62.76,
+				"Protein": 16.7
+			},
+			{
+				"Nama": "Bakso",
+				"Kalori": 444,
+				"Lemak": 28.86,
+				"Karbo": 1.6,
+				"Protein": 42.4
+			},
+			{
+				"Nama": "Mie Ayam",
+				"Kalori": 421,
+				"Lemak": 18.74,
+				"Karbo": 46.23,
+				"Protein": 16.7
+			}
+		]
+	},
+	{
+		"name": "Camilan",
+		"img": "pic6.jpg",
+		"list": [{
+				"Nama": "Pentol",
+				"Kalori": 269,
+				"Lemak": 15.88,
+				"Karbo": 17.23,
+				"Protein": 13.74
+			},
+			{
+				"Nama": "Sempol",
+				"Kalori": 209,
+				"Lemak": 7.94,
+				"Karbo": 24.04,
+				"Protein": 9.83
+			},
+			{
+				"Nama": "Telur gulung",
+				"Kalori": 100,
+				"Lemak": 5.8,
+				"Karbo": 9.73,
+				"Protein": 2.6
+			},
+			{
+				"Nama": "Cilok",
+				"Kalori": 266,
+				"Lemak": 2.57,
+				"Karbo": 58.17,
+				"Protein": 2.45
+			}
 
-    ],
-    "Buah": [
-        {
-            "Nama": "Apel",
-            "Kalori": 72,
-            "Lemak": 0.23,
-            "Karbo": 19.06,
-            "Protein":0.36
-        },
-        {
-            "Nama": "Jeruk",
-            "Kalori": 62,
-            "Lemak": 0.16,
-            "Karbo": 15.39,
-            "Protein":1.23
-        },
-        {
-            "Nama": "Pisang",
-            "Kalori": 105,
-            "Lemak": 0.39,
-            "Karbo": 26.95,
-            "Protein":1.29
-        },
-        {
-            "Nama": "Nanas",
-            "Kalori": 0,
-            "Lemak": 0,
-            "Karbo": 0,
-            "Protein":0
-        },
-        {
-            "Nama": "Melon",
-            "Kalori": 34,
-            "Lemak": 0.19,
-            "Karbo": 8.16,
-            "Protein": 0.84
-        },
-        {
-            "Nama": "Nangka",
-            "Kalori": 94,
-            "Lemak": 0.3,
-            "Karbo": 24.01,
-            "Protein":1.47
-        },
-        {
-            "Nama": "Pepaya",
-            "Kalori": 55,
-            "Lemak": 0.2,
-            "Karbo": 13.73,
-            "Protein":0.85
-        },
-        {
-            "Nama": "Salak",
-            "Kalori": 10,
-            "Lemak": 0.02,
-            "Karbo": 2.02,
-            "Protein":0.04
-        },
-        {
-            "Nama": "Mangga",
-            "Kalori": 107,
-            "Lemak": 0.45,
-            "Karbo": 28.05,
-            "Protein":0.84
-        },
-        {
-            "Nama": "Belimbing",
-            "Kalori": 28,
-            "Lemak": 0.3,
-            "Karbo": 6.12,
-            "Protein":0.95
-        }
+		]
+	},
+	{
+		"name": "Buah",
+		"img": "pic5.jpg",
+		"list": [{
+				"Nama": "Apel",
+				"Kalori": 72,
+				"Lemak": 0.23,
+				"Karbo": 19.06,
+				"Protein": 0.36
+			},
+			{
+				"Nama": "Jeruk",
+				"Kalori": 62,
+				"Lemak": 0.16,
+				"Karbo": 15.39,
+				"Protein": 1.23
+			},
+			{
+				"Nama": "Pisang",
+				"Kalori": 105,
+				"Lemak": 0.39,
+				"Karbo": 26.95,
+				"Protein": 1.29
+			},
+			{
+				"Nama": "Nanas",
+				"Kalori": 0,
+				"Lemak": 0,
+				"Karbo": 0,
+				"Protein": 0
+			},
+			{
+				"Nama": "Melon",
+				"Kalori": 34,
+				"Lemak": 0.19,
+				"Karbo": 8.16,
+				"Protein": 0.84
+			},
+			{
+				"Nama": "Nangka",
+				"Kalori": 94,
+				"Lemak": 0.3,
+				"Karbo": 24.01,
+				"Protein": 1.47
+			},
+			{
+				"Nama": "Pepaya",
+				"Kalori": 55,
+				"Lemak": 0.2,
+				"Karbo": 13.73,
+				"Protein": 0.85
+			},
+			{
+				"Nama": "Salak",
+				"Kalori": 10,
+				"Lemak": 0.02,
+				"Karbo": 2.02,
+				"Protein": 0.04
+			},
+			{
+				"Nama": "Mangga",
+				"Kalori": 107,
+				"Lemak": 0.45,
+				"Karbo": 28.05,
+				"Protein": 0.84
+			},
+			{
+				"Nama": "Belimbing",
+				"Kalori": 28,
+				"Lemak": 0.3,
+				"Karbo": 6.12,
+				"Protein": 0.95
+			}
 
-    ],
-    "Minuman": [
-        {
-            "Nama": "Es Teh",
-            "Kalori": 90,
-            "Lemak": 0,
-            "Karbo": 23.44,
-            "Protein":0.02
-        },
-        {
-            "Nama": "Teh Tawar",
-            "Kalori": 2,
-            "Lemak": 0,
-            "Karbo": 0.76,
-            "Protein":0.02
-        },
-        {
-            "Nama": "Kopi",
-            "Kalori": 2,
-            "Lemak": 0.05,
-            "Karbo": 0.09,
-            "Protein":0.28
-        },
-        {
-            "Nama": "jus",
-            "Kalori": 0,
-            "Lemak": 0,
-            "Karbo": 0,
-            "Protein":0,
-            "Tambahan": [
-                { "Nama": "Apel", "Kalori": 117, "Lemak": 0.27, "Karbo": 28.97 , "Protein":0.15 },
-                { "Nama": "Wortel", "Kalori": 94, "Lemak": 0.35, "Karbo": 21.92 , "Protein":2.24 },
-                { "Nama": "Jeruk", "Kalori": 112, "Lemak": 0.5, "Karbo": 25.79 , "Protein":1.74 },
-                { "Nama": "Nanas", "Kalori": 132, "Lemak": 0.3, "Karbo": 32.17 , "Protein":0.9 },
-                { "Nama": "Mangga", "Kalori": 122, "Lemak": 0.3, "Karbo": 30.15 , "Protein":1.2 }
-           ]
-        },
-        {
-            "Nama": "Es sirup",
-            "Kalori": 0,
-            "Lemak": 0,
-            "Karbo": 0,
-            "Protein":0
-        },
-        {
-            "Nama": "Es degan",
-            "Kalori": 113,
-            "Lemak": 2.05,
-            "Karbo": 24.27,
-            "Protein":0.21
-        },
-        {
-            "Nama": "Es Buah",
-            "Kalori": 247,
-            "Lemak": 0,
-            "Karbo": 62.92,
-            "Protein":0.77
-        },
-        {
-            "Nama": "Es Campur",
-            "Kalori": 425,
-            "Lemak": 19.64,
-            "Karbo": 62.11,
-            "Protein":5.1
-        }
+		]
+	},
+	{
+		"name": "Minuman",
+		"img": "pic7.jpg",
+		"list": [{
+				"Nama": "Es Teh",
+				"Kalori": 90,
+				"Lemak": 0,
+				"Karbo": 23.44,
+				"Protein": 0.02
+			},
+			{
+				"Nama": "Teh Tawar",
+				"Kalori": 2,
+				"Lemak": 0,
+				"Karbo": 0.76,
+				"Protein": 0.02
+			},
+			{
+				"Nama": "Kopi",
+				"Kalori": 2,
+				"Lemak": 0.05,
+				"Karbo": 0.09,
+				"Protein": 0.28
+			},
+			{
+				"Nama": "jus",
+				"Kalori": 0,
+				"Lemak": 0,
+				"Karbo": 0,
+				"Protein": 0,
+				"Tambahan": [{
+						"Nama": "Apel",
+						"Kalori": 117,
+						"Lemak": 0.27,
+						"Karbo": 28.97,
+						"Protein": 0.15
+					},
+					{
+						"Nama": "Wortel",
+						"Kalori": 94,
+						"Lemak": 0.35,
+						"Karbo": 21.92,
+						"Protein": 2.24
+					},
+					{
+						"Nama": "Jeruk",
+						"Kalori": 112,
+						"Lemak": 0.5,
+						"Karbo": 25.79,
+						"Protein": 1.74
+					},
+					{
+						"Nama": "Nanas",
+						"Kalori": 132,
+						"Lemak": 0.3,
+						"Karbo": 32.17,
+						"Protein": 0.9
+					},
+					{
+						"Nama": "Mangga",
+						"Kalori": 122,
+						"Lemak": 0.3,
+						"Karbo": 30.15,
+						"Protein": 1.2
+					}
+				]
+			},
+			{
+				"Nama": "Es sirup",
+				"Kalori": 0,
+				"Lemak": 0,
+				"Karbo": 0,
+				"Protein": 0
+			},
+			{
+				"Nama": "Es degan",
+				"Kalori": 113,
+				"Lemak": 2.05,
+				"Karbo": 24.27,
+				"Protein": 0.21
+			},
+			{
+				"Nama": "Es Buah",
+				"Kalori": 247,
+				"Lemak": 0,
+				"Karbo": 62.92,
+				"Protein": 0.77
+			},
+			{
+				"Nama": "Es Campur",
+				"Kalori": 425,
+				"Lemak": 19.64,
+				"Karbo": 62.11,
+				"Protein": 5.1
+			}
 
-    ]
-}
-
+		]
+	}
+]
