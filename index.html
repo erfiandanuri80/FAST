@@ -12,7 +12,8 @@
   <title>NONE</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/balloon.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="assets/css/custom.css" rel="stylesheet">
 
@@ -371,12 +372,15 @@
                     <button class="ml-auto btn btn-primary" @click="input.bagian = bi" data-toggle="modal" data-target="#addFoodModal">+</button>
                   </div>
                   <div class="list-group">
-                    <div class="list-group-item d-flex align-items-center" v-for="bit, biti in bagian[bi].menu" :key="bit.Nama">
-                      {{ bit.Nama }}
+                    <div class="list-group-item d-flex align-items-center" v-for="bit, biti in bagian[bi].menu" :key="bit.Nama"
+                    :aria-label="bit.tooltip" data-balloon-pos="right">
+                      <span >
+                          {{ bit.Nama }}
+                      </span>
                       <span v-for="bita in bit.Tambahan" class="text-muted">
                         + {{ bita.Nama }}
                       </span>
-                      <button @click="bagian[bi].menu.splice(biti, 1)" class="btn btn-danger ml-auto">&minus;</button>
+                      <button @click="spliceMenu(bi, biti)" class="btn btn-danger ml-auto">&minus;</button>
                     </div>
                   </div>
                 </div>
@@ -497,21 +501,39 @@
           else if (this.input.kelompok !== null)
             this.input.kelompok = null
         },
+        spliceMenu: function (bi, biti) {
+          let mkn = this.bagian[bi].menu.splice(biti, 1)[0];
+          if (mkn.Tambahan) {
+            ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
+              const delta = mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0);
+              this.total[el] -= delta;
+            })
+          } else {
+            ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
+              this.total[el] -= mkn[el]
+            })
+          }
+        },
         pushMenu: function () {
 
           let ss = JSON.stringify(this.makanan[this.input.kelompok].list[this.input.item]);
           // console.log(ss);
           let mkn = JSON.parse(ss);
+          let tooltip = "";
           if (mkn.Tambahan) {
             mkn.Tambahan = mkn.Tambahan.filter((v, i) => !!this.input.toppings[i]);
             ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
-              this.total[el] += mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0)
+              const delta = mkn[el] + mkn.Tambahan.map(x => x[el]).reduce((a, b) => a + b, 0);
+              this.total[el] += delta;
+              tooltip += el + ": " + delta + " kkal\n";
             })
           } else {
             ["Kalori", "Lemak", "Karbo", "Protein"].forEach(el => {
               this.total[el] += mkn[el]
+              tooltip += el + ": " + mkn[el] + " kkal\n";
             })
           }
+          mkn.tooltip = tooltip;
           this.bagian[this.input.bagian].menu.push(mkn);
           this.input = {
             bagian: 0,
